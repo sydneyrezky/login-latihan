@@ -27,7 +27,7 @@ th, td {
  <?php
 require'db.login/config.php';
 
-$sql = "SELECT ID, nama, sandi, email FROM sb_users WHERE nama = '" . $_SESSION['nama'] . "'";
+$sql = "SELECT ID, nama, sandi, email FROM sb_users WHERE nama = '" . $_SESSION['nama'] ."'";
 
 $result = mysqli_query($conn , $sql);
 $hasil = mysqli_fetch_assoc($result);
@@ -67,11 +67,15 @@ $hasil = mysqli_fetch_assoc($result);
 			<?php echo $hasil['email'] ?>
 		</td>
 		<td>
-			<p><a href="formregist.php"> [EDIT]</p>
-			<p><a href="index.php">[HOME]</p>
+			<p><a href="detaillogin2.php"> [EDIT]</p>
+			<p><a href="db.login/logout.php">[Logout]</p>
 		</td>
 
+<?php
+		$_SESSION['username'] = "aabb";
+		echo $_SESSION['username'];
 
+?>
 
 
 	</tr>

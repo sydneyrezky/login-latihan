@@ -14,7 +14,7 @@ if (isset($_POST['login'])) {
 	
 
 
-	$sql = "SELECT nama, sandi FROM sb_users WHERE nama='$nama';";
+	$sql = "SELECT nama, sandi FROM sb_users WHERE nama='$nama' AND sandi='$sandi';";
 	$result = mysqli_query($conn, $sql);
 
 	$row = mysqli_fetch_assoc($result);
